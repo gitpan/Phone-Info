@@ -90,23 +90,23 @@ if ($opts{t} eq 'fp') {
 
 #handle ra
 if ($opts{t} eq 'ra') {
-	my $res=$pi->reverse_address({
-								  apt=>$opts{a},
-								  house=>$opts{h},
-								  street=>$opts{s},
-								  city=>$opts{c},
-								  state=>$opts{S},
-								  zip=>$opts{z},
-								  areacode=>$opts{A},
-								  });
+	$res=$pi->reverse_address({
+							   house=>$opts{h},
+							   street=>$opts{s},
+							   city=>$opts{c},
+							   state=>$opts{S},
+							   zip=>$opts{z},
+							   areacode=>$opts{A},
+							   apt=>$opts{a},
+							   });
 }
 
 #handle ra
-if ($opts{t} eq 'ra') {
-	my $res=$pi->reverse_address({
-								  phone=>$opts{p},
-								  state=>$opts{S},
-								  });
+if ($opts{t} eq 'rp') {
+	$res=$pi->reverse_phone({
+							 phone=>$opts{p},
+							 state=>$opts{S},
+							 });
 }
 
 if ($pi->{error}) {

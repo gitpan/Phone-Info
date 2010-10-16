@@ -10,11 +10,11 @@ Phone::Info - Fetches phone info.
 
 =head1 VERSION
 
-Version 0.0.0
+Version 0.0.1
 
 =cut
 
-our $VERSION = '0.0.0';
+our $VERSION = '0.0.1';
 
 
 =head1 SYNOPSIS
@@ -412,11 +412,12 @@ sub reverse_address{
 										   apt=>$args{apt},
 										   house=>$args{house},
 										   city=>$args{city},
-										   state=>$args{city},
+										   state=>$args{state},
 										   zip=>$args{zip},
 										   areacode=>$args{areacode},
+										   street=>$args{street}
 										   );
-	
+
 	if (!defined($res)) {
 		$self->{error}=3;
 		$self->{errorString}='Net::WhitePages->reverse_address errored. $res is not defined';
